@@ -3,6 +3,7 @@ A Swift app demonstrating connection and activity with an Infinite Peripherals p
 
 Must be paired via Blue Tooth prior to app launch.
 
-![]("infinea-mpos-flat.png")
+
+![](https://github.com/cjazz/DTDevDemo/blob/master/infinea-mpos-flat.png)
 
 [](https://ipcmobile.com/devices/infinea-mpos-flat)
