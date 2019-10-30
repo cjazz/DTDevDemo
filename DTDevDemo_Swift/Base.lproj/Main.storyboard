@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="c0O-a7-CD5">
+    <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <deployment version="4624" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--MainVC-->
+        <scene sceneID="TjQ-Tp-tb5">
+            <objects>
+                <viewController storyboardIdentifier="mainVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="c0O-a7-CD5" customClass="mainVC" customModule="DTDevDemo_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cTz-z7-cnY"/>
+                        <viewControllerLayoutGuide type="bottom" id="ld4-zM-Aoa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ms4-jx-4N3">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="uh4-E0-fpU">
+                                <rect key="frame" x="20" y="72.5" width="728" height="931.5"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" showsHorizontalScrollIndicator="NO" indicatorStyle="black" text="This is a demo for connecting and using an Infinea mPOS Flat device" translatesAutoresizingMaskIntoConstraints="NO" id="npx-sS-dzd">
+                                        <rect key="frame" x="0.0" y="0.0" width="728" height="871.5"/>
+                                        <color key="backgroundColor" white="1" alpha="0.4491384846" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Khk-ap-aCI">
+                                        <rect key="frame" x="0.0" y="901.5" width="728" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZH-Nm-RU7">
+                                                <rect key="frame" x="0.0" y="0.0" width="241.5" height="30"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <state key="normal" title="Disconnect">
+                                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="disconnect:" destination="c0O-a7-CD5" eventType="touchUpInside" id="tmh-tb-dAZ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cuS-ae-qax">
+                                                <rect key="frame" x="243.5" y="0.0" width="241" height="30"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <state key="normal" title="Mag Head Info">
+                                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="headInfo:" destination="c0O-a7-CD5" eventType="touchUpInside" id="eJi-qD-wq4"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9F-4h-FPD">
+                                                <rect key="frame" x="486.5" y="0.0" width="241.5" height="30"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <state key="normal" title="Re-Connect">
+                                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="reConnect:" destination="c0O-a7-CD5" eventType="touchUpInside" id="7fD-QP-w4x"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test mPOS Flat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6JB-sl-6kM">
+                                <rect key="frame" x="323.5" y="5" width="121.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.2470588235" green="0.70980392160000005" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="uh4-E0-fpU" firstAttribute="trailing" secondItem="ms4-jx-4N3" secondAttribute="trailingMargin" id="7bg-Ch-KXA"/>
+                            <constraint firstItem="uh4-E0-fpU" firstAttribute="top" secondItem="6JB-sl-6kM" secondAttribute="bottom" constant="47" id="87L-z5-Whm"/>
+                            <constraint firstItem="uh4-E0-fpU" firstAttribute="leading" secondItem="ms4-jx-4N3" secondAttribute="leadingMargin" id="OtA-Zf-V76"/>
+                            <constraint firstItem="6JB-sl-6kM" firstAttribute="top" secondItem="cTz-z7-cnY" secondAttribute="bottom" constant="5" id="gdF-vU-5sb"/>
+                            <constraint firstItem="6JB-sl-6kM" firstAttribute="centerX" secondItem="ms4-jx-4N3" secondAttribute="centerX" id="lTX-tm-yg6"/>
+                            <constraint firstAttribute="bottom" secondItem="uh4-E0-fpU" secondAttribute="bottom" constant="20" symbolic="YES" id="wyz-9y-H3S"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="npx-sS-dzd" id="Iuz-LW-Hv0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pbI-4K-QPJ" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-673" y="-239"/>
+        </scene>
+    </scenes>
+</document>
