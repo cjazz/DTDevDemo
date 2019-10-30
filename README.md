@@ -1,2 +1,8 @@
 # DTDevDemo
-Swift demo app to demonstrate connectivity to Infinite Peripherals mPOS device
+A Swift app demonstrating connection and activity with an Infinite Peripherals point of sale device - mPOS flat
+
+Must be paired via Blue Tooth prior to app launch.
+
+![]("infinea-mpos-flat.png")
+
+[](https://ipcmobile.com/devices/infinea-mpos-flat)
