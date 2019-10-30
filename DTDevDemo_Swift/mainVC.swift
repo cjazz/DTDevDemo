@@ -10,14 +10,12 @@ import UIKit
 class mainVC: UIViewController, DTDeviceDelegate, UITextViewDelegate {
     
     var dtdev :  DTDevices = DTDevices.sharedDevice() as! DTDevices
-    
 
     @IBOutlet weak var textView: UITextView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         dtdev.delegate = self
         dtdev.connect()
     }
@@ -25,19 +23,15 @@ class mainVC: UIViewController, DTDeviceDelegate, UITextViewDelegate {
     
     @IBAction func reConnect(_ sender: Any) {
         dtdev.connect()
-        
     }
     
     
     @IBAction func disconnect(_ sender: Any) {
         dtdev.disconnect()
-        
     }
     
     @IBAction func headInfo(_ sender: Any) {
-        
         textView.text = "Geadinfo:\n" + msrHeadInfo()
-        
     }
     
     func connectionState(_ state: Int32) {
@@ -48,8 +42,6 @@ class mainVC: UIViewController, DTDeviceDelegate, UITextViewDelegate {
         print(info)
 
         if state == CONN_STATES.CONNECTED.rawValue {
-            
-            
             let deviceInfo = String(format: "%@\n%@ %@\nFirmware: %@\nHardware: %@\nSerial: %@\n MSRHead Info: \n%@",info, dtdev.deviceName, dtdev.deviceModel, dtdev.firmwareRevision,dtdev.hardwareRevision, dtdev.serialNumber, msrHeadInfo())
             textView.text = deviceInfo
             //  ALG_PPAD_DUKPT or ALG_EH_IDTECH
@@ -58,7 +50,6 @@ class mainVC: UIViewController, DTDeviceDelegate, UITextViewDelegate {
             }   catch let error as NSError {
                 print("error \(error.code)")
             }
-            
         }
     }
     
@@ -70,27 +61,20 @@ class mainVC: UIViewController, DTDeviceDelegate, UITextViewDelegate {
             data = String(format: "Ident: %@\nFW version: %02d.%02d.%02d\nSN: %@\n", msrInfo.ident, msrInfo.securityVersion/100,msrInfo.securityVersion%100, msrInfo.firmwareVersion/100, msrInfo.serialNumberString)
             
             data += String(format: " AES enc key version: %d\n AES auth key version: %d\n AES load key version: %d\n DUKPT key verion: %d\n TMK key version: %d\n", keyInfo.getKeyVersion(KEY_ENCRYPTION), keyInfo.getKeyVersion(ALG_EH_IDTECH), keyInfo.getKeyVersion(ALG_EH_IDTECH), keyInfo.getKeyVersion(ALG_EH_IDTECH), keyInfo.getKeyVersion(ALG_EH_IDTECH))
-            
         } catch _ as NSError {
             print("error geting head info")
         }
-        
         return data
-        
-        
     }
 
     func magneticCardEncryptedData(_ encryption: Int32, tracks: Int32, data: Data!) {
-        
         let string1 = String(data: data, encoding: String.Encoding.ascii) ?? "track data could not be read"
         textView.text = textView.text + "Tracks: n\(tracks)\n, Encryption: \(encryption)\n Data: \(string1)"
     }
     
     
     func magneticCardEncryptedData(_ encryption: Int32, tracks: Int32, data: Data!, track1masked: String!, track2masked: String!, track3: String!, source: Int32) {
- 
         let string1 = String(data: data, encoding: String.Encoding.ascii) ?? "data could not be printed"
-        
         print("data: \(string1)")
         print("Track1 masked: \(String(describing: track1masked))")
         print("Track2 masked: \(String(describing: track2masked))")
@@ -139,8 +123,7 @@ class mainVC: UIViewController, DTDeviceDelegate, UITextViewDelegate {
         }
         textView.text = status
     }
-
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
